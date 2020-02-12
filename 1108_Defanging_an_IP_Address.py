@@ -15,12 +15,12 @@ Output: "255[.]100[.]50[.]0"
 
 class Solution:
     def defangIPaddr(self, address: str) -> str:
-#manual method - 
-#create an empty string to store result
+    #manual method - 
+    #create an empty string to store result
         result = ""
-# if character is a digit then add it to result 
-# else it must be . so add [.] to result
-
+        
+    # if character is a digit then add it to result 
+    # else it must be . so add [.] to result
         for character in address:
             if character.isdigit():
                 result += character
@@ -31,9 +31,12 @@ class Solution:
                 
         return result
     
-        """
-        METHOD 2 - 
+    """
+    METHOD 2 - 
         One line solution using replace - O(n)
+    
+    class Solution:
+        def defangIPaddr(self, address: str) -> str:
         
         address = address.replace(".","[.]")
         
