@@ -31,4 +31,28 @@ def firstUniqChar(s):
 
 s="loaveleetcode"
 print(firstUniqChar(s))
+
+"""
+Time - O(n)
+ANOTHER METHOD USING INBUILT collections.Counter and enumerate.
+does not affect time complexity 
+
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
         
+        freq = collections.Counter(s)
+        
+        #collections.Counter will give dictionary of character and count/frequency in descending order
+        print(freq) #Counter({'e': 4, 'l': 2, 'o': 2, 'v': 1, 't': 1, 'c': 1, 'd': 1})
+
+        
+        #enumerate will give number and character you can start numbering from any number as you wish
+        #default will be 0
+        print(list(enumerate(s))) #[(0, 'l'), (1, 'o'), (2, 'v'), (3, 'e'), (4, 'l'), (5, 'e'), (6, 'e'), (7, 't'), (8, 'c'), (9, 'o'), (10, 'd'), (11, 'e')]
+        
+        
+        for index,character in enumerate(s):
+            if freq[character] == 1:
+                return index
+        return -1
+"""
